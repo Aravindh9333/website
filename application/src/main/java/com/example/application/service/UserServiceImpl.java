@@ -65,4 +65,22 @@ public class UserServiceImpl implements UserService{
 		return b;
 	}
 
+	@Override
+	public boolean login(String username, String pasword) {
+		boolean b=false;
+		try
+		{
+			User u=ur.findUserByUnameAndPassword(username, pasword);
+			if(u!=null)
+			{
+				b=true;
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return b;
+	}
+
 }
